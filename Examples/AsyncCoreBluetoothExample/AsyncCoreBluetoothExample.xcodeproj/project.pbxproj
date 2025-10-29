@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2245FBB52D7D055000516564 /* AsyncObservable in Frameworks */ = {isa = PBXBuildFile; productRef = 2245FBB42D7D055000516564 /* AsyncObservable */; };
-		2245FBB72D7D055000516564 /* AsyncObservableUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 2245FBB62D7D055000516564 /* AsyncObservableUserDefaults */; };
 		2245FCBB2D7E603600516564 /* MightFail in Frameworks */ = {isa = PBXBuildFile; productRef = 2245FCBA2D7E603600516564 /* MightFail */; };
-		22C239212D7CC86600BF7624 /* AsyncCoreBluetooth in Frameworks */ = {isa = PBXBuildFile; productRef = 22C239202D7CC86600BF7624 /* AsyncCoreBluetooth */; };
+		4B1F00192EB1F9E200D91112 /* AsyncCoreBluetooth in Frameworks */ = {isa = PBXBuildFile; productRef = 4B1F00182EB1F9E200D91112 /* AsyncCoreBluetooth */; };
+		4B1F001C2EB1FA0700D91112 /* AsyncObservable in Frameworks */ = {isa = PBXBuildFile; productRef = 4B1F001B2EB1FA0700D91112 /* AsyncObservable */; };
+		4B1F001E2EB1FA0700D91112 /* AsyncObservableUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 4B1F001D2EB1FA0700D91112 /* AsyncObservableUserDefaults */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +30,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2245FBB52D7D055000516564 /* AsyncObservable in Frameworks */,
-				2245FBB72D7D055000516564 /* AsyncObservableUserDefaults in Frameworks */,
+				4B1F001C2EB1FA0700D91112 /* AsyncObservable in Frameworks */,
+				4B1F001E2EB1FA0700D91112 /* AsyncObservableUserDefaults in Frameworks */,
 				2245FCBB2D7E603600516564 /* MightFail in Frameworks */,
-				22C239212D7CC86600BF7624 /* AsyncCoreBluetooth in Frameworks */,
+				4B1F00192EB1F9E200D91112 /* AsyncCoreBluetooth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,10 +76,10 @@
 			);
 			name = AsyncCoreBluetoothExample;
 			packageProductDependencies = (
-				22C239202D7CC86600BF7624 /* AsyncCoreBluetooth */,
-				2245FBB42D7D055000516564 /* AsyncObservable */,
-				2245FBB62D7D055000516564 /* AsyncObservableUserDefaults */,
 				2245FCBA2D7E603600516564 /* MightFail */,
+				4B1F00182EB1F9E200D91112 /* AsyncCoreBluetooth */,
+				4B1F001B2EB1FA0700D91112 /* AsyncObservable */,
+				4B1F001D2EB1FA0700D91112 /* AsyncObservableUserDefaults */,
 			);
 			productName = AsyncCoreBluetoothExample;
 			productReference = 22C2390D2D7CC7D900BF7624 /* AsyncCoreBluetoothExample.app */;
@@ -110,9 +110,9 @@
 			mainGroup = 22C239042D7CC7D900BF7624;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				22C2391F2D7CC86600BF7624 /* XCLocalSwiftPackageReference "../../AsyncCoreBluetooth" */,
-				2245FBB32D7D055000516564 /* XCLocalSwiftPackageReference "../../AsyncObservable" */,
 				2245FCB92D7E603600516564 /* XCRemoteSwiftPackageReference "swift-might-fail" */,
+				4B1F00172EB1F9E200D91112 /* XCRemoteSwiftPackageReference "AsyncCoreBluetooth" */,
+				4B1F001A2EB1FA0700D91112 /* XCRemoteSwiftPackageReference "AsyncObservable" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 22C2390E2D7CC7D900BF7624 /* Products */;
@@ -268,7 +268,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AsyncCoreBluetoothExample/Preview Content\"";
-				DEVELOPMENT_TEAM = 7GT6EK8D4J;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -364,17 +364,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		2245FBB32D7D055000516564 /* XCLocalSwiftPackageReference "../../AsyncObservable" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../AsyncObservable;
-		};
-		22C2391F2D7CC86600BF7624 /* XCLocalSwiftPackageReference "../../AsyncCoreBluetooth" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../AsyncCoreBluetooth;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCRemoteSwiftPackageReference section */
 		2245FCB92D7E603600516564 /* XCRemoteSwiftPackageReference "swift-might-fail" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -384,25 +373,44 @@
 				kind = branch;
 			};
 		};
+		4B1F00172EB1F9E200D91112 /* XCRemoteSwiftPackageReference "AsyncCoreBluetooth" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/meech-ward/AsyncCoreBluetooth.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		4B1F001A2EB1FA0700D91112 /* XCRemoteSwiftPackageReference "AsyncObservable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/meech-ward/AsyncObservable.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2245FBB42D7D055000516564 /* AsyncObservable */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = AsyncObservable;
-		};
-		2245FBB62D7D055000516564 /* AsyncObservableUserDefaults */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = AsyncObservableUserDefaults;
-		};
 		2245FCBA2D7E603600516564 /* MightFail */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2245FCB92D7E603600516564 /* XCRemoteSwiftPackageReference "swift-might-fail" */;
 			productName = MightFail;
 		};
-		22C239202D7CC86600BF7624 /* AsyncCoreBluetooth */ = {
+		4B1F00182EB1F9E200D91112 /* AsyncCoreBluetooth */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 4B1F00172EB1F9E200D91112 /* XCRemoteSwiftPackageReference "AsyncCoreBluetooth" */;
 			productName = AsyncCoreBluetooth;
+		};
+		4B1F001B2EB1FA0700D91112 /* AsyncObservable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B1F001A2EB1FA0700D91112 /* XCRemoteSwiftPackageReference "AsyncObservable" */;
+			productName = AsyncObservable;
+		};
+		4B1F001D2EB1FA0700D91112 /* AsyncObservableUserDefaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B1F001A2EB1FA0700D91112 /* XCRemoteSwiftPackageReference "AsyncObservable" */;
+			productName = AsyncObservableUserDefaults;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

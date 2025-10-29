@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import AsyncObservableUserDefaults
+import AsyncObservable
 
-final class UserDefaults {
-  static let connectedDeviceId: AsyncObservableUserDefaults<String?> = .init(key: "connectedDeviceId", initialValue: nil)
+struct InMemoryUserDefaults {
+    static let connectedDeviceId: AsyncObservable<String?> = AsyncObservable<String?>(nil)
 }

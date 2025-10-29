@@ -109,8 +109,15 @@ struct DeviceView: View {
                 
         Toggle("Notifications", isOn: $heartRateNotificationsEnabled)
           .labelsHidden()
-          .onChange(of: heartRateNotificationsEnabled) { _, newValue in
+          .onChange(of: heartRateNotificationsEnabled) { oldValue, newValue in
             Task {
+              let charNotifyState = heartRateMeasurementCharacteristic.isNotifying.current
+
+              if oldValue != charNotifyState {
+                print("Missmatch between old view state \(oldValue) and heartCharacteristic \(charNotifyState)")
+              }
+
+
               await toggleHeartRateNotifications(enabled: newValue)
             }
           }

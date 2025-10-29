@@ -27,6 +27,7 @@ enum BLEIdentifiers {
   enum Characteristic {
     /// Heart Rate Measurement Characteristic (0x2A37)
     static let heartRateMeasurement = CBUUID(string: "2A37")
+    static let heartRateControl = CBUUID(string: "2A39")
 
     /// LED Control Characteristic
     static let ledControl = CBUUID(string: "00001525-1212-EFDE-1523-785FEABCD123")
