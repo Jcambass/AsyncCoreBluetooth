@@ -12,6 +12,7 @@ import SwiftUI
 struct ConnectionManagerView: View {
   let centralManager: CentralManager
   let connectionManager: PeripheralConnectionManager
+
   @State private var showScanningPeripherals = false
 
   var body: some View {
@@ -19,7 +20,7 @@ struct ConnectionManagerView: View {
       VStack {
         if centralManager.bleState.observable != .poweredOn {
           BLEStateView(centralManager: centralManager)
-        } else if UserDefaults.connectedDeviceId.observable == nil {
+        } else if InMemoryUserDefaults.connectedDeviceId.observable == nil {
           VStack {
             Button(action: {
               showScanningPeripherals = true
@@ -38,7 +39,7 @@ struct ConnectionManagerView: View {
           ConnectingToPeripheralView(connectionManager: connectionManager) {
             Task {
               await connectionManager.stop()
-              UserDefaults.connectedDeviceId.update(nil)
+                InMemoryUserDefaults.connectedDeviceId.update(nil)
             }
           }
         }
@@ -48,7 +49,7 @@ struct ConnectionManagerView: View {
         ScanPeripheralsView(centralManager: centralManager) { selectedDevice in
           showScanningPeripherals = false
           let uuid = selectedDevice.identifier
-          UserDefaults.connectedDeviceId.update(uuid.uuidString)
+            InMemoryUserDefaults.connectedDeviceId.update(uuid.uuidString)
           Task {
             await connectionManager.manageConnection(peripheralUUID: uuid.uuidString)
           }
@@ -60,7 +61,6 @@ struct ConnectionManagerView: View {
 
 #Preview {
   MockPeripheral.setupFakePeripherals()
-
-  return ConnectionManagerView(centralManager: .init(forceMock: true), connectionManager: PeripheralConnectionManager(central: .init(forceMock: true)))
+    return ConnectionManagerView(centralManager: .init(forceMock: true), connectionManager: PeripheralConnectionManager(central: .init(forceMock: true)))
     .task {}
 }

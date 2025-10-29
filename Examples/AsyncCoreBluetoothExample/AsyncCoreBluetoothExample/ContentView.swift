@@ -29,7 +29,7 @@ struct ContentView: View {
       // start BLE and connect to the device if it's already been connected to
       for await bleState in await centralManager.start() {
         if bleState == .poweredOn {
-          await connectionManager.manageConnection(peripheralUUID: UserDefaults.connectedDeviceId.current)
+          await connectionManager.manageConnection(peripheralUUID: InMemoryUserDefaults.connectedDeviceId.current)
         }
       }
     }

@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct AsyncCoreBluetoothExampleApp: App {
+    init() {
+        MockPeripheral.setupFakePeripherals()
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(centralManager: .init(forceMock: true))
         }
     }
 }
